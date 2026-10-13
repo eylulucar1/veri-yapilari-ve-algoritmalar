@@ -2,11 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
-
 typedef struct {
     int id[20];           
     char data[20][100];    
