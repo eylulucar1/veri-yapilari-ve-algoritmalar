@@ -91,3 +91,7 @@ int main(int argc, char *argv[]) {
     findMin(kok);
     return 0;
 }
+
+// 25 eklenirse 30 düğümünün sol altına yerleşir.
+// printf() ilk satıra taşınırsa Preorder (kök-sol-sağ) dolaşması elde edilir.
+// findMin() içinde sol yerine sağ takip edilirse 70 (en büyük değer) bulunur.
