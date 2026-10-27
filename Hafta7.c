@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* run this program using the console pauser or add your own getch, system("pause") or input loop */
 typedef struct BTS{
 	int Deger;
 	struct BTS* sol;
@@ -64,14 +63,28 @@ void ara(BTS* kok, int ara){
             if(kok == NULL) break; 
         }
         else{
-            printf("Hazine bulundu!");
+            printf("Hazine bulundu!\n");
             return;
         }
     }
-    printf("bosa kazdin");
+    printf("bosa kazdin\n");
     return;
 }
-
+void yukseklik(BTS* kok){
+	int yuksek=0;
+	while(kok != NULL){
+		if(kok->sag != NULL) {
+			kok = kok->sag;
+			yuksek++;
+		}
+		else if(kok->sol != NULL) { 
+			kok = kok->sol;
+			yuksek++;
+		}
+		else break;
+	}
+	printf("En kotu durum : %d\n",yuksek);
+}
 int main(int argc, char *argv[]) {
 	BTS *kok = malloc(sizeof(BTS));
 	kok->Deger = 30; kok->sol = NULL; kok->sag = NULL; 
@@ -82,5 +95,6 @@ int main(int argc, char *argv[]) {
 	}
 	int aranan = 24;
 	ara(kok, aranan);
+	yukseklik(kok);
 	return 0;
 }
